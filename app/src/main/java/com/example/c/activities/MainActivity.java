@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         binding.imageSignOut.setOnClickListener(v -> signOut()
 
         );
+        System.out.println("Byeee");
     }
     private void loadUserDetails(){
         binding.txtName.setText(preferenceManager.getString(Constants.KEY_NAME));
