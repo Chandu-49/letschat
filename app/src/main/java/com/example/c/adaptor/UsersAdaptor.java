@@ -10,15 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c.databinding.ItemContainUserBinding;
+import com.example.c.listeners.UserListeners;
 import com.example.c.models.User;
 
 import java.util.List;
 
 public class UsersAdaptor  extends RecyclerView.Adapter<UsersAdaptor.UserViewHolder>{
         private final List<User>users;
+        private final UserListeners userListeners;
 
-    public UsersAdaptor(List<User> users) {
+    public UsersAdaptor(List<User> users,UserListeners userListeners) {
         this.users = users;
+        this.userListeners=userListeners;
     }
 
     @NonNull
@@ -50,6 +53,8 @@ public class UsersAdaptor  extends RecyclerView.Adapter<UsersAdaptor.UserViewHol
             binding.textName.setText(user.name);
             binding.textEmail.setText(user.email);
             binding.imageProfile.setImageBitmap(getUserImage(user.image));
+            binding.getRoot().setOnClickListener(v -> {userListeners.onUserClicked(user);
+            });
         }
     }
 

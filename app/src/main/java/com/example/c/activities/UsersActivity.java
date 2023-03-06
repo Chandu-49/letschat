@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 
 import com.example.c.adaptor.UsersAdaptor;
 import com.example.c.databinding.ActivityUsersBinding;
+import com.example.c.listeners.UserListeners;
 import com.example.c.models.User;
 import com.example.c.utilites.Constants;
 import com.example.c.utilites.PreferenceManager;
@@ -22,7 +24,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListeners {
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
 
@@ -68,7 +70,7 @@ public class UsersActivity extends AppCompatActivity {
 
                         }
                         if(users.size()>0 ){
-                            UsersAdaptor usersAdaptor=new UsersAdaptor(users);
+                            UsersAdaptor usersAdaptor=new UsersAdaptor(users,this);
                             binding.usersRecyclerView.setAdapter(usersAdaptor);
                             binding.usersRecyclerView.setVisibility(View.VISIBLE);
 
@@ -95,5 +97,13 @@ public class UsersActivity extends AppCompatActivity {
         {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent=new Intent(getApplicationContext(),chatActivity.class);
+        intent.putExtra(Constants.KEY_UUSERR,user);
+        startActivity(intent);
+        finish();
     }
 }
