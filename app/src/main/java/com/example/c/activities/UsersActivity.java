@@ -64,6 +64,7 @@ public class UsersActivity extends AppCompatActivity implements UserListeners {
                             user.email=queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
                             user.image=queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
                             user.token=queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
+                            user.id=queryDocumentSnapshot.getId();
                             //We are collecting the values from the database and copying them to the local variables of the user class
                             users.add(user);
                             // here we added the values to the arraylist
