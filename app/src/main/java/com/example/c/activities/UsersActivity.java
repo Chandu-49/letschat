@@ -24,7 +24,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class UsersActivity extends AppCompatActivity implements UserListeners {
+public class UsersActivity extends BaseActivity implements UserListeners {
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
 
