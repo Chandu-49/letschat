@@ -15,10 +15,13 @@ import java.util.List;
 
  public class ChatAdaptor extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 private final List<ChatMessage>chatMessages;
-    private final Bitmap receiverProfileImage;
+    private  Bitmap receiverProfileImage;
     private final String senderId;
     public static final int VIEW_TYPE_SENT=1;
     public static final int VIEW_TYPE_RECIVED=2;
+    public void setrecyclerProfileImage(Bitmap bitmap){
+        receiverProfileImage=bitmap;
+    }
 
     public ChatAdaptor(List<ChatMessage> chatMessages, Bitmap reciverProfileImage, String senderId) {
         this.chatMessages = chatMessages;
@@ -89,7 +92,10 @@ private final List<ChatMessage>chatMessages;
         void setData( ChatMessage chatMessage,Bitmap receiverProfileImage){
             binding.textDateTime.setText(chatMessage.dateTime);
             binding.textMessage.setText(chatMessage.message);
-            binding.imageProfile.setImageBitmap(receiverProfileImage);
+            if(receiverProfileImage!=null){
+                binding.imageProfile.setImageBitmap(receiverProfileImage);
+            }
+
         }
 
     }
