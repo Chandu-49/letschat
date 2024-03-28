@@ -16,4 +16,16 @@
 
 # Screenshots
 
+**splashscreen**
+![splashscreen](https://github.com/Chandu-49/letschat/assets/95076681/ec444b71-e496-49da-9ace-533edbf90ebf)
+
+
 **signup**
+![signup](https://github.com/Chandu-49/letschat/assets/95076681/a0f772c2-473d-4118-b6bb-799a25f6b638)
+
+**login**
+![login](https://github.com/Chandu-49/letschat/assets/95076681/7d7c8865-f01c-4095-b2e1-48d788154193)
+
+**chatactivity**
+![chatactivity](https://github.com/Chandu-49/letschat/assets/95076681/b4c03714-8de5-45ad-8953-a1af2aef4cbb)
+
